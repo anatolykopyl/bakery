@@ -145,7 +145,7 @@ export default {
                 '102': [60.053062, 30.427300],
                 '103': [60.023151, 30.220602],
                 '104': [59.945505, 30.285580],
-                
+
                 '106': [59.964458, 30.313182],
                 '107': [59.940763, 30.270929],
             },
@@ -153,7 +153,7 @@ export default {
                 layout: 'default#image',
                 imageHref: 'https://radner.ru/files/marker.png',
                 imageSize: [48, 48],
-                imageOffset: [0, -48]
+                imageOffset: [-10, -48]
             }
         }
     },

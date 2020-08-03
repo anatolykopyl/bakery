@@ -5,7 +5,7 @@
                 <img class="tiny-logo" src="@/assets/flag.png" v-bind:style='{ "transform": tinyOffset }'>
             </span>
             <span id="links">
-                <router-link to="/">Главная</router-link>
+                <router-link to="/" exact>Главная</router-link>
                 <router-link to="/goods">Ассортимент</router-link>
                 <router-link to="/order">Заказ</router-link>
                 <router-link to="/contact-us">Контакты</router-link>
@@ -94,7 +94,7 @@ h1 {
     color: black;
 }
 
-#nav a.router-link-exact-active {
+#nav a.router-link-active {
     color: black;
     text-decoration: underline;
 }

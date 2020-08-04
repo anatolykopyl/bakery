@@ -4,12 +4,14 @@
         <p>{{ item.mainIng }}</p>
         <p v-if=expanded class="light">{{ item.ing }}</p>
         <span class="footer">
-            <p>{{item.mass}} {{item.unit}}</p>
+            <p>{{item.mass}} {{unit}}</p>
             <p v-if=expanded class='light'>
                 {{ item.energ }}<br />
-                Б: {{item.prots}}, Ж: {{item.fats}}, У: {{item.carbs}}
+                <span v-if="item.prots && item.fats && item.carbs">
+                    Б: {{item.prots}}, Ж: {{item.fats}}, У: {{item.carbs}}
+                </span>
             </p>
-            <p class="price">{{ item.cost }}</p>
+            <p class="price">{{ cost }}</p>
         </span>
     </div>
 </template>
@@ -23,6 +25,21 @@ export default {
     data() {
         return {
             expanded: false
+        }
+    },
+    computed: {
+        //  У некоторых товаров цена указана без символа рубля, легче просто его тут добавить.
+        cost: function() {
+            return isNaN(this.item.cost) ? this.item.cost : this.item.cost + " ₽"
+        },
+        unit: function() {
+            // У некоторых товаров указана масса, но единицей измерения являются штуки.
+            // Вероятно стоит еще указывать количество (1 шт.)?
+            if (this.item.mass < 1 && this.item.unit === "шт.") {
+                return "кг";
+            } else {
+                return this.item.unit;
+            }
         }
     }
 }

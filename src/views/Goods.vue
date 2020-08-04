@@ -1,5 +1,7 @@
 <template>
     <div class="goods">
+        <a id="top"></a>
+        <a class="jump-to-top" href="#top"><img src="@/assets/down.png"></a>
         <div id="sneakpeek">
             <a href="#pastry">
                 <img src="@/assets/pastry-tab.png">
@@ -61,13 +63,13 @@
         <h2 id="bread">Хлеба и багеты:</h2>
         <div class="category">
             <div class="col">
-                <Card v-for="item in itemsSubset(1, 'Хлеба, багеты')" v-bind:key=item.nameEng :item=item />
+                <Card v-for="item in itemsSubset(1, ['Хлеба, багеты', 'Сухарики'])" v-bind:key=item.nameEng :item=item />
             </div>
             <div class="col">
-                <Card v-for="item in itemsSubset(2, 'Хлеба, багеты')" v-bind:key=item.nameEng :item=item />
+                <Card v-for="item in itemsSubset(2, ['Хлеба, багеты', 'Сухарики'])" v-bind:key=item.nameEng :item=item />
             </div>
             <div class="col">
-                <Card v-for="item in itemsSubset(3, 'Хлеба, багеты')" v-bind:key=item.nameEng :item=item />
+                <Card v-for="item in itemsSubset(3, ['Хлеба, багеты', 'Сухарики'])" v-bind:key=item.nameEng :item=item />
             </div>
         </div>
         <h2 id="drinks">Напитки:</h2>
@@ -109,9 +111,10 @@ export default {
 
 <style scoped>
 #sneakpeek {
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: top;
     justify-content: space-evenly;
     padding-left: 10%;
     padding-right: 10%;
@@ -131,7 +134,7 @@ export default {
 }
 
 #sneakpeek a {
-    width: 20%;
+    width: 204.8px;
     transition: transform .2s;
     cursor: pointer;
     text-decoration: none;
@@ -145,13 +148,13 @@ export default {
     width: 70%;
     border: rgb(253, 253, 253) solid;
     border-radius: 100%;
-    border-width: 8px;
-    filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.4));
+    border-width: 0.35vw;
+    filter: drop-shadow(0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.4));
 }
 
 h2 {
     text-align: left;
-    margin-left: 50px;
+    margin-left: 5vh;
     font-family: 'Playfair Display', serif;
     font-weight: 500;
     font-size: 30px;
@@ -176,5 +179,41 @@ h2::before {
 .col {
     width: 33.33%;
     padding: 30px;
+}
+
+.jump-to-top {
+    position: fixed;
+    opacity: 0.75;
+    right: 2vw;
+    bottom: 2vw;
+    z-index: 100;
+}
+
+.jump-to-top img {
+    width: 10vh;
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 1024px) {
+    #sneakpeek {
+        padding: 0px;
+        padding-top: 2vh;
+    }
+
+    .category {
+        display: inline-block;
+        padding: 0px;
+        padding-left: 5vh;
+        padding-right: 5vh;
+    }
+
+    .col {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .jump-to-top img {
+        width: 15vw;
+    }
 }
 </style>

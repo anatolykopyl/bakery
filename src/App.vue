@@ -1,10 +1,10 @@
 <template>
-    <div id="app">
+    <div id="app" style="min-height: 100vh;">
         <div id="nav">
             <span class="tiny-logo">
                 <img class="tiny-logo" src="@/assets/flag.png" v-bind:style='{ "transform": tinyOffset }'>
             </span>
-            <span id="links">
+            <span id="links" v-on:click="handleScroll">
                 <router-link to="/" exact>Главная</router-link>
                 <router-link to="/goods">Ассортимент</router-link>
                 <router-link to="/order">Заказ</router-link>
@@ -24,10 +24,18 @@ export default {
         }
     },
     methods: {
-        handleScroll: function() {
-            let offset = window.scrollY/3-100;
-            offset = Math.min(0, offset);
-            this.tinyOffset = "translateY("+offset+"px)";
+        handleScroll: function(event) {
+            if (event.type === "click" && event.target.text !== "Главная") {
+                this.tinyOffset = "translateY(0px)";
+            } else {
+                if (this.$route.name === "Home") {
+                    let offset = window.scrollY/3-100;
+                    offset = Math.min(0, offset);
+                    this.tinyOffset = "translateY("+offset+"px)";
+                } else {
+                    this.tinyOffset = "translateY(0px)";
+                }
+            }
         }
     },
     mounted() {
@@ -110,6 +118,7 @@ img.tiny-logo {
     #nav {
         width: 100%;
         height: 59px;
+        padding-left: 0px;
         padding-right: 0px;
         background-color: #FAEED1;
         position: fixed;
@@ -117,6 +126,10 @@ img.tiny-logo {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    #nav span#links {
+        width: 100%;
     }
         
     #nav a {

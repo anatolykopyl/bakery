@@ -1,5 +1,5 @@
 <template>
-    <div class="card" v-on:click='expanded=!expanded'>
+    <div v-if="item.name.toLowerCase().includes(query.toLowerCase())" class="card" v-on:click='expanded=!expanded'>
         <h4>{{ item.name }}</h4>
         <p>{{ item.mainIng }}</p>
         <p v-if=expanded class="light">{{ item.ing }}</p>
@@ -20,7 +20,8 @@
 export default {
     name: "Card",
     props: {
-        item: Object
+        item: Object,
+        query: String
     },
     data() {
         return {

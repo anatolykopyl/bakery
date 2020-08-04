@@ -62,6 +62,10 @@ h1 {
     color: #3a3a3a;
 }
 
+a {
+    color: brown;
+}
+
 .light {
     font-weight: 200;
 }

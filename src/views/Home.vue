@@ -153,7 +153,7 @@ export default {
             },
             markerIcon: {
                 layout: 'default#image',
-                imageHref: 'https://radner.ru/files/marker.png',
+                imageHref: require('@/assets/marker.png'),
                 imageSize: [48, 48],
                 imageOffset: [-10, -48]
             }

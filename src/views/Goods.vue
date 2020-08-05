@@ -1,6 +1,6 @@
 <template>
     <div class="goods">
-        <a class="jump-to-top" href="#router-view"><img src="@/assets/down.png"></a>
+        <a v-bind:style="{ transform: jumpOffset }" class="jump-to-top" href="#app"><img src="@/assets/down.png"></a>
         <div id="menu">
             <div class="buttons">
                 <a href="#pastry">
@@ -26,10 +26,10 @@
             </div>
             <input type="text" placeholder="Поиск..." v-model="query"/>
         </div>
-        <h2 v-if="categoryLength(['Кондитерские изделия', 'Леденцы', 'Печенье'])" id="pastry">Кондитерские изделия:</h2>
-        <div v-if="categoryLength(['Кондитерские изделия', 'Леденцы', 'Печенье'])" class="category">
+        <h2 v-if="categoryLength(['Кондитерские изделия', 'Леденцы', 'Печенье', 'Торты на заказ'])" id="pastry">Кондитерские изделия:</h2>
+        <div v-if="categoryLength(['Кондитерские изделия', 'Леденцы', 'Печенье', 'Торты на заказ'])" class="category">
             <div v-for="n in 3" v-bind:key=n class="col">
-                <Card v-for="item in itemsSubset(n, ['Кондитерские изделия', 'Леденцы', 'Печенье'])" v-bind:key=item.nameEng :item=item :query=query />
+                <Card v-for="item in itemsSubset(n, ['Кондитерские изделия', 'Леденцы', 'Печенье', 'Торты на заказ'])" v-bind:key=item.nameEng :item=item :query=query />
             </div>
         </div>
         <h2 v-if="categoryLength('Мелкоштучные изделия')" id="singles">Мелкоштучные изделия:</h2>
@@ -71,7 +71,8 @@ export default {
     data() {
         return {
             items: items,
-            query: ''
+            query: '',
+            jumpOffset: "translateY(100px)"
         }
     },
     methods: {
@@ -82,7 +83,14 @@ export default {
             let cropped = this.items.filter((v) => category.includes(v.category));
             let result = cropped.filter((v) => v.name.toLowerCase().includes(this.query.toLowerCase()));
             return result.length;
+        },
+        handleScroll: function() {
+            let offset = Math.max(150-window.scrollY, 0);
+            this.jumpOffset = `translateY(${offset}px)`;
         }
+    },
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
     }
 }
 </script>
@@ -196,7 +204,7 @@ h2::before {
 }
 
 .jump-to-top img {
-    width: 10vh;
+    width: 7vh;
     transform: rotate(180deg);
 }
 

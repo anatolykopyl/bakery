@@ -5,14 +5,15 @@
         <div id="map">
             <div id="napkin">
                 <yandex-map :settings=settings :coords=markers[selected] :zoom=16>
-                    <ymap-marker v-for="marker in markers" v-bind:key="marker.join()"
-                        marker-id=marker
-                        :coords=marker
+                    <ymap-marker v-for="(value, i) in markers" v-bind:key=i
+                        marker-id=i
+                        :coords=value
                         :icon=markerIcon
+                        @click="selectOnMap(i)"
                     />
                 </yandex-map>
             </div>
-            <AddressList v-on:selected="selectMarker" />
+            <AddressList v-on:selected="selectMarker" v-bind:selectedNew="selected" />
         </div>
         <br>
     </div>
@@ -34,6 +35,7 @@ export default {
     data() {
         return {
             selected: 1,
+            nearest: 10,
             settings: {
                 apiKey: '40a5e665-b4d4-4f22-8443-0482b3e0053d',
                 lang: 'ru_RU',
@@ -160,7 +162,31 @@ export default {
     methods: {
         selectMarker: function(n) {
             this.selected = n;
+        },
+        selectOnMap: function(n) {
+            this.selected = +n;
+            document.getElementById("element"+n).scrollIntoView();
+        },
+        pythagorean: function(sideA, sideB){
+            return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+        },
+        selectNearest: function(pos) {
+            const coords = pos.coords;
+            let selectedDistLat = this.markers[0][0] - coords.latitude;
+            let selectedDistLon = this.markers[0][1] - coords.longitude;
+
+            for (let marker of this.markers) {
+                let distLat = marker[0] - coords.latitude;
+                let distLon = marker[1] - coords.longitude;
+                
+                if (this.pythagorean(selectedDistLat, selectedDistLon) > this.pythagorean(distLat, distLon)) {
+                    this.nearest = marker;
+                }
+            }
         }
+    },
+    mounted() {
+        //navigator.geolocation.getCurrentPosition(this.selectNearest);
     }
 };
 </script>

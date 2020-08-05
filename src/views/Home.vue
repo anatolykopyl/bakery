@@ -187,6 +187,7 @@ export default {
     },
     mounted() {
         //navigator.geolocation.getCurrentPosition(this.selectNearest);
+        window.scrollTo(0, 0);
     }
 };
 </script>

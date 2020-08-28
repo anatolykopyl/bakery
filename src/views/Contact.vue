@@ -2,22 +2,22 @@
     <div class="main">
         <div class="side-col">
             <h2>Свяжитесь с нами</h2>
-            642-06-38<br />
-            <a href="mailto:info@fvolchek.ru">info@fvolchek.ru</a><br />
+            420-13-37<br />
+            <a href="mailto:info@atolchek.ru">info@atolchek.ru</a><br />
 
             <h2>Отдел персонала</h2>
-            <a href="mailto:hr@fvolchek.ru">hr@fvolchek.com</a><br />
+            <a href="mailto:hr@atolchek.ru">hr@atolchek.com</a><br />
 
             <h2>Хотите купить нашу продукцию оптом?</h2>
-            <a href="mailto:sales-b2b@fvolchek.ru">sales-b2b@fvolchek.com</a><br />
+            <a href="mailto:sales-b2b@atolchek.ru">sales-b2b@atolchek.com</a><br />
 
             <h2>Предложите нам</h2>
-            Товары и услуги: <a href="mailto:zakupki@fvolchek.ru">zakupki@fvolchek.com</a><br />
-            Предложения по аренде помещений: <a href="mailto:arenda@fvolchek.ru">arenda@fvolchek.com</a><br />
+            Товары и услуги: <a href="mailto:zakupki@atolchek.ru">zakupki@atolchek.com</a><br />
+            Предложения по аренде помещений: <a href="mailto:arenda@atolchek.ru">arenda@atolchek.com</a><br />
 
             <h2>По любым вопросам</h2>
-            Филипп Вольчек<br />
-            <a href="mailto:flv@fvolchek.ru">flv@fvolchek.ru</a>
+            Анатолий Тольчек<br />
+            <a href="mailto:flv@atolchek.ru">flv@atolchek.ru</a>
         </div>
     </div>
 </template>

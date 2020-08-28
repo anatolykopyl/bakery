@@ -6,12 +6,12 @@
             :id="'element'+bakery.n"
             v-on:click="select(bakery.n)">
                 <h3>{{ bakery.address }}</h3>
-                <img v-if="bakery.metro" src="@/assets/metro.png" /> <span class="light">{{ bakery.metro }}{{ bakery.location }}</span>
+                <img v-if="bakery.metro" src="@/assets/metro.png" alt="Иконка метро"/> <span class="light">{{ bakery.metro }}{{ bakery.location }}</span>
                 <br />
                 <span>{{ bakery.hours }}</span>
             </div>
         </div>
-        <img v-if="showHint" id="scroll-hint" src="@/assets/down.png">
+        <img v-if="showHint" id="scroll-hint" src="@/assets/down.png" alt="Scroll hint">
         <br />
     </div>
 </template>

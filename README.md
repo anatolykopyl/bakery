@@ -1,24 +1,5 @@
-# fvolchek
+# Булочная
 
-## Project setup
-```
-npm install
-```
+Сайт булочной на Vue.js со вкладками на Vue Router, списком адресов и картой Yandex Maps и массивным каталогом товаров с функцией поиска.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![Screenshot](https://imgur.com/CuRhumI.png)

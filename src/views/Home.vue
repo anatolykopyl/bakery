@@ -37,7 +37,7 @@ export default {
             selected: 1,
             nearest: 10,
             settings: {
-                apiKey: '40a5e665-b4d4-4f22-8443-0482b3e0053d',
+                apiKey: process.env.YM_KEY,
                 lang: 'ru_RU',
                 coordorder: 'latlong',
                 version: '2.1'

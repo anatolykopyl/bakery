@@ -210,6 +210,8 @@ h4 {
     width: 600px;
     height: 600px;
     border: darkgray solid 1px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 #napkin {

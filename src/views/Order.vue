@@ -36,7 +36,7 @@ img {
     border: rgb(253, 253, 253) solid;
     border-radius: 100%;
     border-width: 8px;
-    filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.4));
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
 }
 
 .text {

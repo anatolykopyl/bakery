@@ -164,7 +164,7 @@ export default {
     border: rgb(253, 253, 253) solid;
     border-radius: 100%;
     border-width: 0.35vw;
-    filter: drop-shadow(0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.4));
+    box-shadow: 0.35vw 0.35vw 0.35vw rgba(0, 0, 0, 0.4);
 }
 
 h2 {

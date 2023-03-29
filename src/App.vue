@@ -1,9 +1,9 @@
 <template>
     <div id="app" style="min-height: 100vh;">
         <div id="nav">
-            <span class="tiny-logo">
+            <router-link to="/" class="tiny-logo">
                 <img class="tiny-logo" src="@/assets/flag.png" v-bind:style='{ "transform": tinyOffset }'>
-            </span>
+            </router-link>
             <span id="links" v-on:click="handleScroll">
                 <router-link to="/" exact>Главная</router-link>
                 <router-link to="/goods">Ассортимент</router-link>

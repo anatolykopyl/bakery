@@ -50,16 +50,6 @@ h2 {
     color: #3a3a3a;
 }
 
-img {
-    width: 40%;
-    height: auto;
-    margin: 30px;
-    border: rgb(253, 253, 253) solid;
-    border-radius: 100%;
-    border-width: 8px;
-    filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.4));
-}
-
 @media screen and (max-width: 1024px) {
     .main {
         padding-left: 10vw;

@@ -18,6 +18,10 @@
             <h2>По любым вопросам</h2>
             Анатолий Тольчек<br />
             <a href="mailto:flv@atolchek.ru">flv@atolchek.ru</a>
+
+            <h3>Хотите получить кучу выдуманных контактов?</h3>
+            Прочитайте содержимое этой страницы, все телефоны и адреса ненастоящие.<br />
+            Лучше купите булок у <a href="http://www.fvolchek.ru" target="_blank">fvolchek.ru</a>.
         </div>
     </div>
 </template>
@@ -40,7 +44,7 @@ export default {
     padding-left: 100px;
 }
 
-h2 {
+h2, h3 {
     font-family: 'Playfair Display', serif;
     font-weight: 500;
 }

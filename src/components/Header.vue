@@ -10,17 +10,15 @@ export default {
 
 <style scoped>
 #header {
-    background: url('../assets/headcut.png') no-repeat center;
-    height: 388px;
+    background: url('../assets/headcut.png') no-repeat top;
+    background-size: cover;
+    aspect-ratio: 2000/388;
 }
 
 @media screen and (max-width: 1024px) {
     #header {
-        background: url('../assets/head.png') no-repeat center;
+        background: url('../assets/head.png') no-repeat top;
         background-size: contain;
-        height: 0;
-        padding-top: 17.25%; /* (img-height / img-width * container-width) */
-                /* (388 / 2000 * 100) */
     }
 }
 </style>

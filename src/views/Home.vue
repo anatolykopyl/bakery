@@ -1,7 +1,7 @@
 <template>
     <div id="home">
         <Header/>
-        <h1>Любимые булочные Северной Столицы</h1>
+        <h1 class="header">Любимые булочные Северной Столицы</h1>
         <div id="map">
             <div id="napkin">
                 <yandex-map :settings=settings :coords=markers[selected] :zoom=16>
@@ -162,6 +162,7 @@ export default {
     methods: {
         selectMarker: function(n) {
             this.selected = n;
+            document.querySelector("ymaps").scrollIntoView();
         },
         selectOnMap: function(n) {
             this.selected = +n;
@@ -178,7 +179,7 @@ export default {
             for (let marker of this.markers) {
                 let distLat = marker[0] - coords.latitude;
                 let distLon = marker[1] - coords.longitude;
-                
+
                 if (this.pythagorean(selectedDistLat, selectedDistLon) > this.pythagorean(distLat, distLon)) {
                     this.nearest = marker;
                 }
@@ -197,6 +198,7 @@ h1 {
     margin-bottom: 50px;
     margin-top: 50px;
     font-size: 5vh;
+    text-wrap: balance;
 }
 
 h4 {
@@ -229,7 +231,7 @@ h4 {
 .marker {
     font-family: 'Playfair Display', serif;
     width: 100px;
-    color: #000000; 
+    color: #000000;
     font-weight: bold;
 }
 
@@ -254,7 +256,7 @@ h4 {
     #napkin {
         position: relative;
         width: 100%;
-        padding: 0px;
+        padding: 0;
         background: none;
     }
 
@@ -263,5 +265,17 @@ h4 {
         display: block;
         padding-bottom: 100%;
     }
+}
+
+@media screen and (max-width: 1024px) {
+    .header {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    font-size: 32px;
+  }
 }
 </style>

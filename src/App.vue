@@ -135,13 +135,13 @@ img.tiny-logo {
     #nav span#links {
         width: 100%;
     }
-        
+
     #nav a {
         margin-left: 10px;
         margin-right: 10px;
     }
 
-    span.tiny-logo {
+    a.tiny-logo {
         display: none;
     }
 
